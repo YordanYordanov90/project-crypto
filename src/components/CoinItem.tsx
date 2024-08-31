@@ -13,19 +13,21 @@ const CoinItem = ({ coin }: any) => {
 
   return (
     <tr className="h-[80px] border-b overflow-hidden">
-      <td onClick={saveCoin}>
+      <td onClick={saveCoin} className="w-[40px]">
         {savedCoin ? <AiFillStar /> : <AiOutlineStar />}
       </td>
       <td>{coin.market_cap_rank}</td>
       <td>
-        <div className="flex  items-center">
-          <Image
-            width={20}
-            height={20}
-            className="w-6 mr-2 rounded-full"
-            src={coin.image}
-            alt={coin.id}
-          />
+        <div className="flex h-8 items-center">
+          <Link href={`/coinpage/${coin.id}`}>
+            <Image
+              width={20}
+              height={20}
+              className="w-6 mr-2 rounded-full"
+              src={coin.image}
+              alt={coin.id}
+            />
+          </Link>
           {/* Wrap coin name in Link */}
           <Link href={`/coinpage/${coin.id}`}>
             <p className="hidden sm:table-cell cursor-pointer">{coin.name}</p>
