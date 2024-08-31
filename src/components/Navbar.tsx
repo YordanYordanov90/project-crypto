@@ -14,12 +14,13 @@ const Navbar = () => {
   };
   return (
     <div className="flex items-center justify-between h-20 font-bold border border-secondary rounded-2xl shadow-xl  px-2 max-w-[1140px] w-full mx-auto ">
-      <Link href="/">
+      <Link href="/coin">
         <h1 className="text-2xl">Cryptobase</h1>
       </Link>
       <div className="hidden md:block">
         <ModeToggle />
       </div>
+      <Button asChild variant="default"><Link href="/coinpage">Coin Market</Link></Button>
       <div className="hidden md:block space-x-2">
         <Button asChild>
           <Link href="/signin"> Sign in</Link>
