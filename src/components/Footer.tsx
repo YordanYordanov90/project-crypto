@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col space-y-5   md:flex-row items-center justify-between h-50  border border-secondary rounded-2xl shadow-xl mt-10 pb-4 px-2 max-w-[1140px] w-full mx-auto">
+    <div className="flex flex-col space-y-5   md:flex-row items-center justify-between h-50  border-2 rounded-2xl shadow-xl mt-10 pb-4 px-2 max-w-[1140px] w-full mx-auto">
       <Link href="/">
         <h3 className="text-2xl">Cryptobase</h3>
       </Link>

@@ -5,7 +5,9 @@ import TrendingPage from "@/components/Trending";
 export default async function CoinsPage() {
   const coins = await getCoins(); // Fetch coins on the server side
 
-  
+  if (!coins) {
+    return <div>Failed to load coin data. Please try again later.</div>;
+  }
 
   return (
     <>

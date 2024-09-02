@@ -41,17 +41,17 @@ const Navbar = () => {
       {/* mobile menu */}
 
       {open && (
-        <div className="md:hidden fixed top-0 left-0 h-screen w-full bg-white/90 flex flex-col items-center justify-evenly z-40 ease-in duration-200">
+        <div className="md:hidden fixed top-0 left-0 h-screen w-full bg-neutral-300/80  dark:bg-gray-900/90 flex flex-col items-center justify-evenly z-40 ease-in duration-200">
           <ul className="w-full p-6 space-y-6 text-center">
             <li className="text-lg ">
-              <Link href="/" className="block py-2 ">
-                Home
-              </Link>
+              <Button asChild>
+                <Link href="/">Home</Link>
+              </Button>
             </li>
             <li className="text-lg">
-              <Link href="/account" className="block py-2 ">
-                Account
-              </Link>
+              <Button asChild>
+                <Link href="/account">Account</Link>
+              </Button>
             </li>
             <li>
               <ModeToggle />
