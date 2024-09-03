@@ -21,7 +21,7 @@ const page = () => {
       <div className="flex justfiy-between items-center my-12 py-8 rounded-div">
         <div className="w-full ">
           <h1 className="text-2xl tex-center font-bold py-4">Watch List</h1>
-          <SavedCoin />
+        
         </div>
       </div>
     </div>

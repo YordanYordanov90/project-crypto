@@ -1,23 +1,20 @@
-// middleware.ts
-import { NextResponse, NextRequest } from "next/server";
-import { getAuth } from "firebase/auth";
-import { app } from "./firebase"; // Ensure this path is correct
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-const auth = getAuth(app);
+// Define public routes (e.g., sign-in and sign-up pages)
+const isPublicRoute = createRouteMatcher(["/signin(.*)", "/signup(.*)"]);
 
-export function middleware(request: NextRequest) {
-  const token = request.cookies.get("authToken"); // Assuming you use a token in cookies
-
-  // Check if the user is authenticated
-  if (!token) {
-    // Redirect to login page if not authenticated
-    return NextResponse.redirect(new URL("/signin", request.url));
+export default clerkMiddleware((auth, request) => {
+  // Protect all routes that are not public
+  if (!isPublicRoute(request)) {
+    auth().protect(); // This ensures the user must be signed in
   }
-
-  // Continue to the requested page if authenticated
-  return NextResponse.next();
-}
+});
 
 export const config = {
-  matcher: ["/coinpage"], // Define the routes you want to protect
+  matcher: [
+    // Define routes that will use this middleware
+    "/coinpage", // Protect the coinpage route
+    "/coinpage/(.*)", // Protect all sub-routes under coinpage, if any
+    "/(api|trpc)(.*)", // Protect API routes as well
+  ],
 };

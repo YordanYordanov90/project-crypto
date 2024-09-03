@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { AuthProvider } from "@/contex/AuthContext";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({ weight: "400", subsets: ["latin"] });
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AuthProvider>
+    <ClerkProvider>
       <html lang="en">
         <body className={nunito.className}>
           <ThemeProvider
@@ -31,13 +31,12 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
-<footer>
-
-            <Footer />
-</footer>
+            <footer>
+              <Footer />
+            </footer>
           </ThemeProvider>
         </body>
       </html>
-    </AuthProvider>
+    </ClerkProvider>
   );
 }

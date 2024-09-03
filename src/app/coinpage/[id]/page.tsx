@@ -36,12 +36,12 @@ export default async function CoinDetailsPage({
             <p className="text-gray-500 text-lg uppercase">{coinDetails.symbol}</p>
           </div>
         </div>
-        <div className="text-center sm:text-right text-black">
-          <p className="text-xl sm:text-2xl font-semibold">
+        <div className="text-center sm:text-right ml-6 space-y-1 text-black">
+          <p className="text-xl sm:text-2xl  font-semibold">
             $
             {coinDetails.market_data?.current_price?.usd?.toLocaleString() || "N/A"}
           </p>
-          <p className="text-sm">Current Price</p>
+          <p className="text-sm ">Current Price</p>
         </div>
       </div>
 

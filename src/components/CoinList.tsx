@@ -23,7 +23,9 @@ export default function CoinList({ coins }: { coins: any[] }) {
   return (
     <>
       <div className="flex justify-between my-5 max-w-[1140px] mx-auto items-center">
-        <h1 className="text-2xl text-center hidden font-bold">Search Crypto</h1>
+        <h1 className="text-2xl text-center hidden md:block font-bold">
+          Search Crypto
+        </h1>
         <SearchCoin
           searchQuery={searchQuery}
           onSearchChange={handleSearchChange}
