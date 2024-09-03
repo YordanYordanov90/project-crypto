@@ -22,7 +22,7 @@ export default function CoinList({ coins }: { coins: any[] }) {
 
   return (
     <>
-      <div className="flex justify-between my-5 max-w-[1140px] mx-auto items-center">
+      <div className="flex flex-col space-y-2 justify-between my-5 max-w-[1140px] mx-auto items-center ">
         <h1 className="text-2xl text-center hidden md:block font-bold">
           Search Crypto
         </h1>

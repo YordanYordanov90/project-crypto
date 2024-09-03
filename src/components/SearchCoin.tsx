@@ -16,7 +16,7 @@ const SearchCoin: React.FC<SearchCoinProps> = ({
       value={searchQuery}
       onChange={onSearchChange}
       placeholder="Search for a coin..."
-      className="border p-2 rounded shadow-md"
+      className="border p-2 rounded shadow-md w-full"
     />
   );
 };

@@ -16,7 +16,7 @@ const Navbar = () => {
     setOpen(!open);
   };
   return (
-    <div className="flex items-center justify-between  h-20 font-bold border border-secondary rounded-2xl shadow-xl  px-4 max-w-[1140px] w-full mx-auto ">
+    <div className="flex items-center justify-between   h-20 font-bold border border-secondary rounded-2xl shadow-xl  px-4 max-w-[1140px] w-full mx-auto ">
       <div className="flex items-center space-x-5">
         <Link href="/">
           <h1 className="text-2xl">Cryptobase</h1>
@@ -25,17 +25,20 @@ const Navbar = () => {
           <ModeToggle />
         </div>
       </div>
-      <div className='flex items-center justify-end space-x-5'>
-        <Button asChild variant="default">
-          <Link href="/coinpage">Home</Link>
-        </Button>
-        <Button asChild variant="default">
-          <Link href="/account">Watched Coins</Link>
-        </Button>
-        <Button asChild variant="default">
-          <Link href="/">News</Link>
-        </Button>
-      </div>
+      {userId && (
+        <div className="flex items-center justify-end space-x-5">
+          <Button asChild variant="default">
+            <Link href="/coinpage">Home</Link>
+          </Button>
+          <Button asChild variant="default">
+            <Link href="/account">Watched Coins</Link>
+          </Button>
+          <Button asChild variant="default">
+            <Link href="/">News</Link>
+          </Button>
+        </div>
+      )}
+
       <div className="hidden md:block space-x-2">
         {!userId && (
           <>
