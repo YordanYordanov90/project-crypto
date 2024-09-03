@@ -1,4 +1,3 @@
-import SavedCoin from "@/components/SavedCoin";
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -21,7 +20,6 @@ const page = () => {
       <div className="flex justfiy-between items-center my-12 py-8 rounded-div">
         <div className="w-full ">
           <h1 className="text-2xl tex-center font-bold py-4">Watch List</h1>
-        
         </div>
       </div>
     </div>
