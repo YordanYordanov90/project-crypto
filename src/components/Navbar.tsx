@@ -32,6 +32,9 @@ const Navbar = () => {
         <Button asChild variant="default">
           <Link href="/account">Watched Coins</Link>
         </Button>
+        <Button asChild variant="default">
+          <Link href="/">News</Link>
+        </Button>
       </div>
       <div className="hidden md:block space-x-2">
         {!userId && (
