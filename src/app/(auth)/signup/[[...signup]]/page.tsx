@@ -1,13 +1,9 @@
-import { SignUp } from '@clerk/nextjs'
+import { SignUp } from "@clerk/nextjs";
 
 export default function Page() {
   return (
-
-    <div className='flex flex-col items-center justify-center min-h-screen'>
-
-
-      <SignUp />
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <SignUp fallbackRedirectUrl={"/coinpage"} />
     </div>
-
-)
+  );
 }

@@ -18,6 +18,7 @@ export default function CoinList({ coins }: { coins: any[] }) {
         coin.symbol.toLowerCase().includes(query)
     );
     setFilteredCoins(filtered);
+    console.log(filtered);
   };
 
   return (

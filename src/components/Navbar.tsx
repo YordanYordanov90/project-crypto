@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
       </div>
       {userId && (
-        <div className="flex items-center justify-end space-x-5">
+        <div className="md:flex items-center justify-end space-x-5 hidden">
           <Button asChild variant="default">
             <Link href="/coinpage">Home</Link>
           </Button>
@@ -66,11 +66,7 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden fixed top-0 left-0 h-screen w-full bg-neutral-300/80  dark:bg-gray-900/90 flex flex-col items-center justify-evenly z-40 ease-in duration-200">
           <ul className="w-full p-6 space-y-6 text-center">
-            <li className="text-lg ">
-              <Button asChild>
-                <Link href="/">Home</Link>
-              </Button>
-            </li>
+            
             <li className="text-lg">
               <Button asChild>
                 <Link href="/account">Account</Link>
@@ -80,6 +76,19 @@ const Navbar = () => {
               <ModeToggle />
             </li>
           </ul>
+          {userId && (
+            <div className='flex flex-col space-y-4'>
+             <Button asChild variant="default">
+             <Link href="/coinpage">Home</Link>
+           </Button>
+           <Button asChild variant="default">
+             <Link href="/account">Watched Coins</Link>
+           </Button>
+           <Button asChild variant="default">
+             <Link href="/">News</Link>
+           </Button>
+           </div>
+          )}
           <div className="flex flex-col space-y-4 p-4">
             {!userId && (
               <>
