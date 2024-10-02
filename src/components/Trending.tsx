@@ -25,7 +25,7 @@ export default async function TrendingPage() {
   }
 
   return (
-    <div className="max-w-[1140px] mx-auto border shadow-xl p-4 rounded-2xl mt-24">
+    <div className="max-w-[1280px] mx-auto border shadow-xl p-4 rounded-2xl mt-24">
       <h1 className="text-2xl text-center my-1 py-1 font-bold">
         Trending Coins
       </h1>
@@ -55,7 +55,7 @@ export default async function TrendingPage() {
                   height={50}
                   width={50}
                   className="w-4 mr-2"
-                  src="/dollar.png" // This is a placeholder URL; replace with a better dollar image if needed
+                  src="/dollar.png"
                   alt="USD"
                 />
                 {/* Convert BTC price to USD */}

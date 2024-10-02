@@ -1,6 +1,7 @@
 import CoinList from "@/components/CoinList"; // Import the Client Component
 import { getCoins } from "@/app/actions/coins"; // Server action to fetch coins
 import TrendingPage from "@/components/Trending";
+import { Suspense } from "react";
 
 export default async function CoinsPage() {
   const coins = await getCoins(); // Fetch coins on the server side

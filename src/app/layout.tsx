@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({ weight: "400", subsets: ["latin"] });
@@ -30,7 +31,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
+
             {children}
+
             <footer>
               <Footer />
             </footer>

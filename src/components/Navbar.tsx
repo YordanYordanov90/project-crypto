@@ -7,8 +7,11 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { UserButton } from "@clerk/nextjs";
 import { useAuth } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const activePath = usePathname();
+
   const [open, setOpen] = useState(false);
   const { userId } = useAuth();
 
@@ -34,7 +37,7 @@ const Navbar = () => {
             <Link href="/account">Watched Coins</Link>
           </Button>
           <Button asChild variant="default">
-            <Link href="/">News</Link>
+            <Link href="/nft">NFT&apos;s</Link>
           </Button>
         </div>
       )}
@@ -66,10 +69,11 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden fixed top-0 left-0 h-screen w-full bg-neutral-300/80  dark:bg-gray-900/90 flex flex-col items-center justify-evenly z-40 ease-in duration-200">
           <ul className="w-full p-6 space-y-6 text-center">
-            
             <li className="text-lg">
               <Button asChild>
-                <Link href="/account">Account</Link>
+                <Link href="/account" onClick={handleOpen}>
+                  Account
+                </Link>
               </Button>
             </li>
             <li>
@@ -77,17 +81,23 @@ const Navbar = () => {
             </li>
           </ul>
           {userId && (
-            <div className='flex flex-col space-y-4'>
-             <Button asChild variant="default">
-             <Link href="/coinpage">Home</Link>
-           </Button>
-           <Button asChild variant="default">
-             <Link href="/account">Watched Coins</Link>
-           </Button>
-           <Button asChild variant="default">
-             <Link href="/">News</Link>
-           </Button>
-           </div>
+            <div className="flex flex-col space-y-4">
+              <Button asChild variant="default">
+                <Link href="/coinpage" onClick={handleOpen}>
+                  Home
+                </Link>
+              </Button>
+              <Button asChild variant="default">
+                <Link href="/account" onClick={handleOpen}>
+                  Watched Coins
+                </Link>
+              </Button>
+              <Button asChild variant="default">
+                <Link href="/" onClick={handleOpen}>
+                  News
+                </Link>
+              </Button>
+            </div>
           )}
           <div className="flex flex-col space-y-4 p-4">
             {!userId && (
